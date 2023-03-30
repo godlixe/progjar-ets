@@ -63,6 +63,7 @@ class Server(multiprocessing.Process):
 
 			clt = ProcessTheClient(self.connection, self.client_address)
 			self.the_clients.append(clt)
+			# clt.daemon = True
 			clt.start()
 			self.connection.close()
 
